@@ -5,6 +5,8 @@ require_relative 'core_extensions/object'
 require_relative 'core_extensions/symbol'
 require_relative 'core_extensions/string'
 require_relative 'core_extensions/nil_class'
+require_relative 'core_extensions/true_class'
+require_relative 'core_extensions/false_class'
 
 module Contractinator
   ::Object.include(CoreExtensions::Object)
@@ -15,4 +17,6 @@ module Contractinator
   ::String.include(CoreExtensions::String)
   ::Symbol.include(CoreExtensions::Symbol)
   ::NilClass.include(CoreExtensions::NilClass)
+  ::TrueClass.include(CoreExtensions::TrueClass)
+  ::FalseClass.include(CoreExtensions::FalseClass)
 end
