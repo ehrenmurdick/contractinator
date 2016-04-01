@@ -15,7 +15,7 @@ describe Contractinator do
 
       class B
         def thing
-          1
+          true
         end
       end
     END
@@ -44,7 +44,7 @@ describe Contractinator do
           describe B do
             it do
               b = B.new
-              agree(b, :thing).will be_truthy
+              agree(b, :thing).will eq(true)
             end
           end
         END

@@ -2,8 +2,12 @@ module Contractinator
   module CoreExtensions
     module Array
       def contract_inspect
-        values = map(&:contract_inspect).join(', ')
-        "[#{values}]"
+        if any?
+          values = map(&:contract_inspect).uniq.join(', ')
+          "[some #{values}]"
+        else
+          '[empty]'
+        end
       end
     end
   end
